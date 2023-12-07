@@ -36,9 +36,9 @@ public class AuthServiceApplication {
 		Role DRIVER = new Role();
 		DRIVER.setName("DRIVER");
 		roleRepository.save(DRIVER);
-		Role client = new Role();
-		DRIVER.setName("CLIENT");
-		roleRepository.save(client);
+		Role CLIENT = new Role();
+		CLIENT.setName("CLIENT");
+		roleRepository.save(CLIENT);
 
 		UserApp adminUser = new UserApp();
 		adminUser.setName("admin");
@@ -53,6 +53,15 @@ public class AuthServiceApplication {
 		user.setPassword(passwordEncoder.encode("123"));
 		user.setRole(DRIVER);
 		userRepository.save(user);
+
+		UserApp CLIENT_USER = new UserApp();
+		CLIENT_USER.setName("aziz");
+		CLIENT_USER.setEmail("aziz@client.com");
+		CLIENT_USER.setPassword(passwordEncoder.encode("123"));
+		CLIENT_USER.setRole(CLIENT);
+		userRepository.save(user);
+
+
 	}
 }
 
